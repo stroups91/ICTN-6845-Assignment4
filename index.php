@@ -90,6 +90,8 @@ if ($action == 'login_process') {
         header("Location: https://itcs6845assignment3.000webhostapp.com/index.php?action=new_user_screen&loginError=passblank");  
     } else if ($retype_pass == NULL ) {
         header("Location: https://itcs6845assignment3.000webhostapp.com/index.php?action=new_user_screen&loginError=retype_passblank");  
+    } else if ($retype_pass != $password ) {
+        header("Location: https://itcs6845assignment3.000webhostapp.com/index.php?action=new_user_screen&loginError=retype_passblank");  
     } else { 
           validate_user($username, $password);
           $validateInd = validate_ifexist($username);
